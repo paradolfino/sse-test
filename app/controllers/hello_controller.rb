@@ -4,12 +4,13 @@ class HelloController < ApplicationController
     @last = Transaction.last
     @transaction = Transaction.last
     loop do
+      sleep 1
       @transaction = Transaction.last
       if @transaction != @last
         response.stream.write "#{@transaction.content} <br/>"
-        sleep 5
+        sleep 1
       end
-      
+      sleep 1
     end
     response.stream.close
   end
