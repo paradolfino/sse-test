@@ -6,8 +6,10 @@ class HelloController < ApplicationController
     begin
       loop do
         if Transaction.content.changed?
-        sse.write({ time: Time.now })
-        
+          sse.write({ time: Time.now })
+          sleep 2
+        else
+          sse.write({ time: Time.now })
         end
         sleep 2
       end
