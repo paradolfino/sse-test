@@ -4,7 +4,7 @@ class HelloController < ApplicationController
     @last = Transaction.last
     loop do
       @transaction = Transaction.last
-      if @transactions
+      if @transaction != @last
         response.stream.write "#{@transaction.content} <br/>"
       end
       sleep 2
