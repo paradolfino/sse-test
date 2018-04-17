@@ -6,8 +6,8 @@ class HelloController < ApplicationController
     begin
       loop do
         
-          sse.write({ time: Time.now })
-          sleep 2
+        sse.write({ time: Time.now })
+        sleep 2
         
       end
     rescue IOError
