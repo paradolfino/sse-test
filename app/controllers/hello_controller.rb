@@ -5,11 +5,11 @@ class HelloController < ApplicationController
     @transaction = Transaction.last
     loop do
       if @transaction != @last
-        #response.stream.write "#{@transaction.content} <br/>"
-        redirect_to '/'
+        response.stream.write "#{@transaction.content} <br/>"
+        response.stream.close
       end
       sleep 2
     end
-    response.stream.close
+    
   end
 end
