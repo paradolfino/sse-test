@@ -2,6 +2,7 @@ class HelloController < ApplicationController
   include ActionController::Live
   def index
     @last = Transaction.last
+    @transaction = Transaction.last
     loop do
       @transaction = Transaction.last
       if @transaction != @last
