@@ -7,9 +7,8 @@ class HelloController < ApplicationController
       if @transaction != @last
         #response.stream.write "#{@transaction.content} <br/>"
         redirect_to '/'
-        sleep 1
       end
-      sleep 1
+      sleep 2
     end
     response.stream.close
   end
