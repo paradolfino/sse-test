@@ -1,5 +1,6 @@
 class HelloController < ApplicationController
   include ActionController::Live
+  include Ticker
   def ticker
     response.headers['Content-Type'] = 'text/event-stream'
     sse = Ticker::SSE.new(response.stream)
