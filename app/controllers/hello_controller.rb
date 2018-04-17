@@ -1,7 +1,7 @@
 class HelloController < ApplicationController
   include ActionController::Live
   def index
-    @transactions = Transaction.all
+    @transaction = Transaction.last
     5.times do
       response.stream.write "World <br/>"
       sleep 2
