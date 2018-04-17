@@ -7,9 +7,9 @@ class HelloController < ApplicationController
       loop do
         if Transaction.content.changed?
         sse.write({ time: Time.now })
-        sleep 2
-        end
         
+        end
+        sleep 2
       end
     rescue IOError
       logger.info 'Client disconnects causes IOError on write'
