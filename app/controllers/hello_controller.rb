@@ -10,6 +10,7 @@ class HelloController < ApplicationController
           sleep 2
         else
           sse.write({ time: Time.now })
+          sleep 2
         end
         sleep 2
       end
