@@ -4,8 +4,6 @@ class HelloController < ApplicationController
     @last = Transaction.last
     @transaction = Transaction.last
     loop do
-      sleep 1
-      @transaction = Transaction.last
       if @transaction != @last
         #response.stream.write "#{@transaction.content} <br/>"
         redirect_to '/'
