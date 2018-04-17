@@ -1,0 +1,5 @@
+
+[initial project setup and setup SSE, begin setup of ActiveModel::Dirty]
+### 17/04/2018[00:07 - 01:01]:
+* initial project setup
+
