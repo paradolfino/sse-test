@@ -7,7 +7,8 @@ class HelloController < ApplicationController
       sleep 1
       @transaction = Transaction.last
       if @transaction != @last
-        response.stream.write "#{@transaction.content} <br/>"
+        #response.stream.write "#{@transaction.content} <br/>"
+        puts "test"
         sleep 1
       end
       sleep 1
