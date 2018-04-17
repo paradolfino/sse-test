@@ -1,6 +1,8 @@
 class HelloController < ApplicationController
   include ActionController::Live
   def ticker
+    @trans = Transaction.last
+    @trans_last = @trans
     response.headers['Content-Type'] = 'text/event-stream'
     sse = Ticker::SSE.new(response.stream)
     begin
