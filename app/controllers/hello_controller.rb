@@ -1,7 +1,7 @@
 class HelloController < ApplicationController
   include ActionController::Live
   def index
-    
+    @last = nil
     loop do
       @transaction = Transaction.last
       @transactions = Transaction.all
