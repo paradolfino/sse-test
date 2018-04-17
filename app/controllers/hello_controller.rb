@@ -5,9 +5,10 @@ class HelloController < ApplicationController
     sse = Ticker::SSE.new(response.stream)
     begin
       loop do
-        
+        if Transaction.content.changed?
         sse.write({ time: Time.now })
         sleep 2
+        end
         
       end
     rescue IOError
