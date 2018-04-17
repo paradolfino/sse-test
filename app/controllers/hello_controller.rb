@@ -5,8 +5,9 @@ class HelloController < ApplicationController
     loop do
       @transaction = Transaction.last
       @transactions = Transaction.all
-      if @transaction
+      if @transactions.changed?
       response.stream.write @transaction.content
+      end
       sleep 2
     end
     response.stream.close
